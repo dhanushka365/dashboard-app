@@ -10,6 +10,18 @@ export class DashboardService{
     constructor(private http: HttpClient){}
 
     public getHttpTraces(): Observable<any>{
-       return this.http.get(`${this.SERVER_URL}/httptrace`);
+       return this.http.get<any>(`${this.SERVER_URL}/httptrace`);
+    }
+
+    public getSystemHealth(): Observable<any>{
+        return this.http.get<any>(`${this.SERVER_URL}/health`);
+    }
+
+    public getSystemCpu(): Observable<any>{
+        return this.http.get<any>(`${this.SERVER_URL}/metrics/system.cpu.count`);
+    }
+
+    public getProcessUptime(): Observable<any>{
+        return this.http.get<any>(`${this.SERVER_URL}/metrics/process.uptime`);
     }
 }
