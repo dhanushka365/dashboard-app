@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  serverUrl:'http://localhost:4200/actuator'
+  serverUrl:'http://localhost:9000/actuator'
 };
 
 /*
